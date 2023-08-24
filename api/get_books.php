@@ -9,6 +9,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     // Convert price and rating to numbers
     $row['price'] = floatval($row['price']);
     $row['rating'] = floatval($row['rating']);
+    $row['featured'] = floatval($row['featured']);
 
     $books[] = $row;
 }
