@@ -7,9 +7,10 @@ $result = mysqli_query($connection, $query);
 $books = [];
 while ($row = mysqli_fetch_assoc($result)) {
     // Convert price and rating to numbers
+    $row['id'] = intval($row['id']);
     $row['price'] = floatval($row['price']);
     $row['rating'] = floatval($row['rating']);
-    $row['featured'] = floatval($row['featured']);
+    $row['featured'] = intval($row['featured']);
 
     $books[] = $row;
 }
